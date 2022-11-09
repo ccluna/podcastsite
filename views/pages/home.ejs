@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O Admirável Cristão Novo é um podcast que leva à Cristo de uma forma leve. Liberdade é ser leve. Aqui pensamos em como a nossa vida cristã deveria iluminar e insperar outras vidas. Sem bandeiras ou placas, apenas a graça.">
+    <link rel="stylesheet" type="text/css" href="/css/style_home.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <%- include('../layout/header.ejs') %>
+  
+    <section id="episodes">
+        <% for(let i=0; i < episodes.length; i++) { %>
+            <a href="./episodes/<%= episodes[i].id %>">
+              <img class="cover" src="<%= episodes[i].img %>" alt="">   
+            </a>
+            <article>
+                <h3><%= episodes[i].chapter %> <%= episodes[i].title %></h3>
+                <p><%= episodes[i].description%></p>        
+            </article>
+        <%}%>
+    </section>
+    
+</body>
+</html>

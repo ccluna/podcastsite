@@ -1,0 +1,175 @@
+/* CSS GLOBAL DA PÁGINA DE EPISÓDIOS */
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:ital,wght@0,400;0,700;1,200;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:ital,wght@0,400;0,700;1,200;1,500&display=swap');
+@import url('style_player.css');
+@import url('responsive.css');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html {
+    font-size: 65%;
+}
+
+html,
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    height: 100vh;
+}
+
+
+#box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5em;
+    background-image: url('/images/background.svg');
+    background-size: contain;
+    background-position: center;
+}
+
+.name {
+    font-family: Oxygen;
+    font-size: 2.6rem;
+}
+
+#name-description p {
+    width: 90%;
+    font-family: Comfortaa;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    text-align: justify;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.288);
+    padding: 0.8em;
+}
+
+img.cover {
+    width: 250px;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    border-radius: 3%;
+    border: 0.04em solid #000;
+}
+
+h2#posted {
+    color: rgb(51, 50, 50);
+    font-family: Oxygen;
+    font-size: 1.3rem;
+}
+
+p.credits {
+    font-family: Roboto;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 1em;   
+}
+
+
+
+div#button {
+    background-color: rgb(88, 88, 88);
+    border: 0.2em solid rgb(128, 134, 134);
+    height: 2em;
+    width: 2em;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    margin-top: -6em;
+    text-align:center;
+    font-size: 3em;
+    font-family: Oxygen;
+    color:rgb(173, 177, 177);
+    padding: 0.1em;
+    opacity: 35%;
+    cursor: pointer;
+    display: none;
+}
+
+#button-up {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    justify-content: baseline;
+    transform: translateX(116em);
+}
+
+#button-up a {
+    text-decoration: none;
+}
+
+#post {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    padding: 0 20% 0 20%;
+}
+
+#post h2{
+    font-family: Roboto;
+    background-color: #fff;
+    font-weight:900;
+    margin-top: 1em;
+    font-size: 2.7rem;
+}
+
+
+pre {
+    margin-top: 3em;
+    margin-bottom: 10em;
+    font-family: Oxygen, Arial, Helvetica, sans-serif;
+    white-space: pre-line;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    text-align: justify;
+} 
+
+span.i {
+    font-style: italic;
+}
+
+span.b {
+    font-weight: bold;
+}
+
+#text {
+    visibility: hidden;
+}
+
+aside {
+    background-image: url('https://i.imgur.com/rx49BCv.png');
+    background-color: #000;
+    background-size:auto;
+    background-position: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 0.8em;
+    width: 100%;
+    height: 12vh;
+    border-top: 5px solid rgb(6, 4, 172);
+}
+/*
+header::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    height:100%;
+    width: 100%;
+    background-color:black;
+    opacity: 0.5;
+    z-index: -1;
+}
+*/

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style_ep.css">
+
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body id="home">
+    <header id="box">
+        <div id="name-description">
+            <% if (episode) { %>
+                <h1 class="name"><%= episode.chapter %>  <%= episode.title %></h1>
+                
+            <% } else { %>
+                <h1>Hummm... Parece que esse episódio não foi ao ar ainda...</h1>
+            <% } %>
+            <h2 id="posted">Publicado em: <%= episode.posted %></h2>
+            <p><%= episode.description %></p>
+        </div>
+        <img class="cover" src="<%= episode.img %>" alt="<%= episode.caption %>">
+    </header>
+    <main id="post">
+            <h2 class="post">Acompanhe nossa transcrição ou <a href="#description">siga para a descrição</a> </h2>
+            <p class="credits">Esta transcrição foi feita por: <%= episode.transcribed %></p>
+            <article id="transcript"></article>
+    </main>
+    <div id="button-up">
+        <a href="#home">
+            <div id="button" title="Voltar para o Começo" alt="voltar para o começo">
+                <p>>></p>
+             </div>
+        </a>
+    </div>
+    <aside>
+        <%- include('../layout/player.ejs') %>
+    </aside>
+    <script>
+        let file = '<%= episode.transcript %>';
+        fetch (file)
+	    .then(x => x.text())
+	    .then(y => document.getElementById('transcript').innerHTML = y);
+    </script>
+    <script src="/scripts/script.js"></script>
+    
+</body>
+</html>
